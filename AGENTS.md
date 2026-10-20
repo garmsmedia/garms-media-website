@@ -40,8 +40,9 @@ One-page site that introduces GARMS, explains services, shows creative thinking,
 | 4 | Selected Concepts / Speculative Work | `sections/Work.tsx` | `#work` |
 | 5 | Why GARMS? (orange) | `sections/WhyGarms.tsx` | — |
 | 6 | Team | `sections/Team.tsx` | `#team` |
-| 7 | Contact | `sections/Contact.tsx` | `#contact` |
-| 8 | Footer | `layout/Footer.tsx` | — |
+| 7 | Free Consultation (ink card on paper) | `sections/Consultation.tsx` | `#consultation` |
+| 8 | Contact | `sections/Contact.tsx` | `#contact` |
+| 9 | Footer | `layout/Footer.tsx` | — |
 
 Nav links: Home, Services, Work, About, Contact + "Let's Talk" CTA.
 
@@ -149,6 +150,7 @@ supabase/migrations/    database schema for leads
 - Validation rules in `src/lib/contact/validation.ts` are shared by the browser and the server action; the server is the source of truth.
 - Spam protection: honeypot field, minimum fill time, length limits, in-memory IP rate limit (light protection only on serverless).
 - Storage: `src/lib/contact/leads.ts` writes to Supabase via REST when `SUPABASE_URL` and `SUPABASE_SECRET_KEY` are set. Otherwise the whole form is visibly **disabled** (fields and button) with a notice that enquiries aren't open yet. Keep it disabled until a real backend AND a reviewed privacy policy are ready.
+- The Free Consultation CTA uses the same condition: while enquiries are closed it is visibly disabled with a "Coming soon" note. It only ever links to `#contact` — never an external booking platform.
 - Never log personal data. Never expose the secret key to the browser.
 
 ## 12. Performance requirements
@@ -163,7 +165,7 @@ supabase/migrations/    database schema for leads
 Before merging a visual change:
 - [ ] Uses colour tokens and the type scale above; orange used as an accent, not everywhere.
 - [ ] Section follows the pattern: numbered eyebrow → Anton `h2` → short supporting copy.
-- [ ] Alternates dark/light backgrounds (hero dark → about light → services dark → work light → why orange → team dark → contact light → footer dark).
+- [ ] Alternates dark/light backgrounds (hero dark → about light → services dark → work light → why orange → team dark → consultation (dark card on light) → contact light → footer dark).
 - [ ] Hover effects are subtle (colour/translate), with no layout shift.
 - [ ] Checked at 390px and 1440px wide.
 
