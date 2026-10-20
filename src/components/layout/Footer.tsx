@@ -15,7 +15,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-5 pt-20 pb-10 sm:px-8">
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-5">
-            <Link href="/#home" aria-label="GARMS MEDIA — back to top" className="inline-block rounded-sm">
+            <Link href="/#home" aria-label="GARMS MEDIA, back to top" className="inline-block rounded-sm">
               <Wordmark className="[&_.display]:text-4xl" />
             </Link>
             <p className="mt-5 max-w-sm leading-relaxed text-ash">{site.positioning}</p>
@@ -46,7 +46,7 @@ export function Footer() {
                     </a>
                   ) : (
                     <span className="text-ash">
-                      {social.label} <span className="text-xs uppercase tracking-[0.12em]">— link coming soon</span>
+                      {social.label} <span className="text-xs uppercase tracking-[0.12em]">(link coming soon)</span>
                     </span>
                   )}
                 </li>
@@ -58,7 +58,7 @@ export function Footer() {
                   </a>
                 ) : (
                   <span className="text-ash">
-                    Email <span className="text-xs uppercase tracking-[0.12em]">— to be confirmed</span>
+                    Email <span className="text-xs uppercase tracking-[0.12em]">(to be confirmed)</span>
                   </span>
                 )}
               </li>

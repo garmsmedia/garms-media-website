@@ -62,6 +62,12 @@ Everything that isn't confirmed yet is clearly labelled on the site and lives in
 
 Rules: no invented clients, testimonials, metrics, credentials or social handles (see AGENTS.md §8).
 
+## Insights articles
+
+- Live article: `/insights/from-scrolls-to-sales` (previewed on the homepage in the Insights section).
+- Edit metadata, homepage summary/takeaways and infographic data in `src/content/articles/from-scrolls-to-sales.ts`; the body copy is in `src/app/insights/from-scrolls-to-sales/page.tsx`.
+- All article visuals are original SVG/CSS illustrations (no stock photos). See AGENTS.md → "Articles" for writing rules (e.g. no em dashes).
+
 ## Contact form
 
 The form validates in the browser and again on the server, and includes basic spam protection (honeypot, minimum fill time, rate limit).

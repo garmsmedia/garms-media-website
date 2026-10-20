@@ -31,7 +31,7 @@ export function Consultation() {
               {consultation.highlight}
             </p>
 
-            <SectionHeading index="06" eyebrow="Next step" id="consultation-title" eyebrowClassName="text-ash">
+            <SectionHeading index="07" eyebrow="Next step" id="consultation-title" eyebrowClassName="text-ash">
               {consultation.headline.before}{" "}
               <span className="text-flame">{consultation.headline.accent}</span>
             </SectionHeading>
