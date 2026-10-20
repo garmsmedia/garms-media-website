@@ -15,8 +15,8 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-5 pt-20 pb-10 sm:px-8">
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-5">
-            <Link href="/#home" aria-label="GARMS MEDIA LTD — back to top" className="inline-block rounded-sm">
-              <Wordmark legal className="[&_.display]:text-4xl" />
+            <Link href="/#home" aria-label="GARMS MEDIA — back to top" className="inline-block rounded-sm">
+              <Wordmark className="[&_.display]:text-4xl" />
             </Link>
             <p className="mt-5 max-w-sm leading-relaxed text-ash">{site.positioning}</p>
           </div>
@@ -72,7 +72,7 @@ export function Footer() {
 
         <div className="mt-8 flex flex-col gap-3 border-t border-paper/10 pt-6 text-sm text-ash sm:flex-row sm:justify-between">
           <p>
-            © <CurrentYear /> {site.legalName}. All rights reserved.
+            © <CurrentYear /> {site.name}. All rights reserved.
           </p>
           <Link href="/privacy" className="hover:text-paper">
             Privacy Policy

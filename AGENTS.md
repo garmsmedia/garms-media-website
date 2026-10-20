@@ -14,10 +14,12 @@ Read this before changing anything in this repository. It applies to humans and 
 
 ## 1. What GARMS MEDIA is
 
-**GARMS MEDIA LTD** is an early-stage Social Media Marketing Agency (SMMA) concept for **independent streetwear and urban-fashion clothing brands in Los Angeles, California**.
+**GARMS MEDIA** (short name: **GARMS**) is an early-stage Social Media Marketing Agency (SMMA) concept for **independent streetwear and urban-fashion clothing brands in Los Angeles, California**.
 
 - **Mission:** To help independent streetwear and urban-fashion brands strengthen their online presence and grow their e-commerce businesses through creative, culturally relevant, and results-driven social media marketing.
 - **Services:** social media strategy & content planning · content creation & production · community management · UGC & influencer collaborations · paid social advertising · analytics, reporting & optimization.
+
+- **Brand name:** always "GARMS MEDIA" (or "GARMS" for short). Never add a company-registration suffix after the name anywhere on the site.
 
 ## 2. Audience and positioning
 
@@ -146,7 +148,7 @@ supabase/migrations/    database schema for leads
 
 - Validation rules in `src/lib/contact/validation.ts` are shared by the browser and the server action; the server is the source of truth.
 - Spam protection: honeypot field, minimum fill time, length limits, in-memory IP rate limit (light protection only on serverless).
-- Storage: `src/lib/contact/leads.ts` writes to Supabase via REST when `SUPABASE_URL` and `SUPABASE_SECRET_KEY` are set. Otherwise the form shows an honest "not connected — nothing was sent or stored" state.
+- Storage: `src/lib/contact/leads.ts` writes to Supabase via REST when `SUPABASE_URL` and `SUPABASE_SECRET_KEY` are set. Otherwise the whole form is visibly **disabled** (fields and button) with a notice that enquiries aren't open yet. Keep it disabled until a real backend AND a reviewed privacy policy are ready.
 - Never log personal data. Never expose the secret key to the browser.
 
 ## 12. Performance requirements

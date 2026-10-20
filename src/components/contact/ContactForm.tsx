@@ -43,6 +43,7 @@ function ContactFormInner({ configured, onReset }: { configured: boolean; onRese
   // lose what they typed). Without JavaScript, `action` still posts to the server.
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (!configured) return;
     const form = e.currentTarget;
     const found = validateContact(readContactForm(new FormData(form)));
     if (Object.keys(found).length > 0) {
@@ -84,11 +85,14 @@ function ContactFormInner({ configured, onReset }: { configured: boolean; onRese
         <p id="form-note" className="flex gap-3 border-l-4 border-flame bg-ink/[0.04] p-4 text-sm leading-relaxed text-ink">
           <Icon name="info" className="mt-0.5 size-5 shrink-0" />
           <span>
-            <strong>Heads up:</strong> this form is in development and not connected to an inbox yet.
-            You can try it, but submissions are not sent or stored.
+            <strong>Enquiries aren&apos;t open yet.</strong> This form is disabled while GARMS is a
+            university demonstration. It will open once our enquiry system and privacy policy are
+            ready.
           </span>
         </p>
       )}
+      {/* Disabled (all fields + button) until lead storage is configured. */}
+      <fieldset disabled={!configured} className="m-0 min-w-0 space-y-7 border-0 p-0 disabled:opacity-60">
       {configured && <p id="form-note" className="sr-only">All fields are required unless marked optional.</p>}
 
       {/* Honeypot (hidden from people and assistive tech). */}
@@ -246,12 +250,13 @@ function ContactFormInner({ configured, onReset }: { configured: boolean; onRese
 
       <button
         type="submit"
-        disabled={pending}
-        className={buttonClasses("primary", "w-full hover:!bg-ink hover:!text-paper disabled:cursor-wait disabled:opacity-70 sm:w-auto")}
+        disabled={pending || !configured}
+        className={buttonClasses("primary", "w-full hover:!bg-ink hover:!text-paper disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:!bg-flame disabled:hover:!text-ink sm:w-auto")}
       >
-        {pending ? "Sending…" : "Let's Talk"}
-        {!pending && <Icon name="arrow" className="size-4 transition-transform group-hover:translate-x-1" />}
+        {!configured ? "Enquiries opening soon" : pending ? "Sending…" : "Let's Talk"}
+        {configured && !pending && <Icon name="arrow" className="size-4 transition-transform group-hover:translate-x-1" />}
       </button>
+      </fieldset>
     </form>
   );
 }

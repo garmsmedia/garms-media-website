@@ -8,7 +8,7 @@
 
 export const site = {
   name: "GARMS MEDIA",
-  legalName: "GARMS MEDIA LTD",
+  shortName: "GARMS",
   title: "GARMS MEDIA | Social Media Marketing for Independent Streetwear Brands",
   description:
     "GARMS MEDIA is a creative social media marketing agency concept focused on helping independent streetwear and urban-fashion brands build communities and grow online.",

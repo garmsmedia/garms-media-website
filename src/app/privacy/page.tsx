@@ -62,7 +62,7 @@ export default function PrivacyPage() {
           <section>
             <h2>To be completed</h2>
             <p className="mt-3">
-              Data retention period, legal basis, data controller details for {site.legalName}, and any
+              Data retention period, legal basis, data controller details for {site.name}, and any
               analytics or cookies used.
             </p>
           </section>

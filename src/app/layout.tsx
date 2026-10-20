@@ -70,8 +70,8 @@ export const viewport: Viewport = {
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: site.legalName,
-  alternateName: site.name,
+  name: site.name,
+  alternateName: site.shortName,
   description: site.description,
   url: site.url,
   areaServed: { "@type": "City", name: "Los Angeles" },

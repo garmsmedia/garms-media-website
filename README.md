@@ -1,6 +1,6 @@
 # GARMS MEDIA — Website
 
-One-page website for **GARMS MEDIA LTD**, a social media marketing agency concept for independent streetwear and urban-fashion brands in Los Angeles.
+One-page website for **GARMS MEDIA**, a social media marketing agency concept for independent streetwear and urban-fashion brands in Los Angeles.
 
 The site introduces GARMS, explains its services, shows speculative creative concepts, introduces the team and invites brand founders to get in touch.
 
@@ -66,7 +66,7 @@ Rules: no invented clients, testimonials, metrics, credentials or social handles
 
 The form validates in the browser and again on the server, and includes basic spam protection (honeypot, minimum fill time, rate limit).
 
-**Without Supabase configured (default):** the form shows a visible "in development" notice, and after a valid submission tells the visitor clearly that the message was *not* sent or stored. Nothing is saved anywhere.
+**Without Supabase configured (default):** the form is visibly disabled (fields and button greyed out) with a notice that enquiries aren't open yet. Nothing can be submitted or stored. The server action also refuses to store anything in this state.
 
 **With Supabase configured:** valid submissions are inserted into the `contact_leads` table and the visitor sees a success message.
 
