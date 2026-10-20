@@ -11,10 +11,6 @@ const nextConfig: NextConfig = {
   cacheComponents: true,
   partialPrefetching: true,
   poweredByHeader: false,
-  images: {
-    // 90 is used for the official logo so its edges stay crisp.
-    qualities: [75, 90],
-  },
   turbopack: {
     rules: {
       "*.css": {

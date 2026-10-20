@@ -80,7 +80,7 @@ Balance: black and off-white do the heavy lifting; orange is a strong but contro
 
 ### Logo
 
-- Official logo: `src/assets/brand/garms-media-logo.png` (white "garms" with the hanger, orange "media", transparent background). Rendered by `components/layout/Logo.tsx`.
+- Official logo: `src/assets/brand/garms-media-logo.png` (white "garms" with the hanger, orange "media", transparent background). Rendered by `components/layout/Logo.tsx` from lossless PNG sizes in `public/brand/`; regenerate them with `scripts/generate-brand-assets.py`, never by hand.
 - Never redraw, recolour, crop into, stretch or distort it. Size it by height only (`h-*` + `w-auto`).
 - White artwork: use it on **dark (ink) backgrounds only**. Never place it on cream/paper, and never put it in a black box on a light section.
 - Used in: header (links to `/`), footer, and the Open Graph share images. Avoid adding it elsewhere.

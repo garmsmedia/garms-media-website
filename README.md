@@ -126,9 +126,10 @@ Vercel's [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guideline
 
 ## Logo and icons
 
-- Official logo: `src/assets/brand/garms-media-logo.png`, shown via `src/components/layout/Logo.tsx` in the header and footer (optimised automatically by `next/image`).
+- Master logo: `src/assets/brand/garms-media-logo.png` (the original upload at full resolution, transparent background).
+- The site serves **lossless** PNG sizes from `public/brand/` through `src/components/layout/Logo.tsx`; the browser picks the size that is sharp for each screen.
 - Favicons: `src/app/favicon.ico`, `src/app/icon.png`, `src/app/apple-icon.png` (the logo's hanger on near-black).
-- To update the logo, replace the PNG with the same filename (transparent background, white + orange artwork) and keep the rules in AGENTS.md → Logo.
+- To update the logo, replace the master PNG (same filename) and run `python3 scripts/generate-brand-assets.py` (needs Pillow, NumPy, SciPy) to rebuild every size and icon. Keep the rules in AGENTS.md → Logo.
 
 ## Fonts
 

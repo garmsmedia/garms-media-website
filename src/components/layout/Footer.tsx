@@ -16,7 +16,7 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-5">
             <Link href="/" aria-label="GARMS MEDIA homepage" className="inline-block rounded-sm">
-              <Logo alt="" className="h-16 w-auto sm:h-20" sizes="(min-width: 640px) 200px, 160px" />
+              <Logo alt="" className="h-16 w-auto sm:h-20" sizes="(min-width: 640px) 197px, 158px" />
             </Link>
             <p className="mt-5 max-w-sm leading-relaxed text-ash">{site.positioning}</p>
           </div>
