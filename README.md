@@ -124,6 +124,12 @@ Vercel's [Fair Use Guidelines](https://vercel.com/docs/limits/fair-use-guideline
 - Basic security headers are set in `next.config.ts`.
 - `npm audit` currently reports advisories in ESLint's dev-only tooling (`eslint-config-next` → `fast-glob` → `braces`). They don't ship to the browser or the server bundle; the suggested `--force` fix would downgrade Next's lint config, so it's intentionally not applied.
 
+## Logo and icons
+
+- Official logo: `src/assets/brand/garms-media-logo.png`, shown via `src/components/layout/Logo.tsx` in the header and footer (optimised automatically by `next/image`).
+- Favicons: `src/app/favicon.ico`, `src/app/icon.png`, `src/app/apple-icon.png` (the logo's hanger on near-black).
+- To update the logo, replace the PNG with the same filename (transparent background, white + orange artwork) and keep the rules in AGENTS.md → Logo.
+
 ## Fonts
 
 Anton, DM Sans and Instrument Serif are © their authors and licensed under the SIL Open Font License 1.1 — see `src/app/fonts/LICENSE-*.txt`.

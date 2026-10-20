@@ -2,11 +2,12 @@ import { ImageResponse } from "next/og";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 
-export const alt = "GARMS MEDIA — Social media marketing for independent streetwear brands";
+export const alt = "GARMS MEDIA: Social media marketing for independent streetwear brands";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 const anton = await readFile(join(process.cwd(), "src/app/fonts/Anton-Regular.woff"));
+const logo = `data:image/png;base64,${(await readFile(join(process.cwd(), "src/assets/brand/garms-media-logo.png"))).toString("base64")}`;
 
 /** Social sharing image, generated at build time in brand colours. */
 export default async function OpengraphImage() {
@@ -25,10 +26,8 @@ export default async function OpengraphImage() {
           fontFamily: "Anton",
         }}
       >
-        <div style={{ display: "flex", alignItems: "baseline", gap: 14 }}>
-          <span style={{ fontSize: 44 }}>GARMS</span>
-          <span style={{ fontSize: 22, color: "#FF5A1F", letterSpacing: 6 }}>MEDIA</span>
-        </div>
+        {/* Official logo, scaled by height only (original aspect ratio 2558:1039). */}
+        <img src={logo} alt="" height={72} width={Math.round((72 * 2558) / 1039)} />
         <div style={{ display: "flex", flexDirection: "column", fontSize: 104, lineHeight: 0.95, textTransform: "uppercase" }}>
           <span>Your brand deserves</span>
           <span style={{ display: "flex", gap: 24 }}>

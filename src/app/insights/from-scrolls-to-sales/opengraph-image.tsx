@@ -7,6 +7,7 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 const anton = await readFile(join(process.cwd(), "src/app/fonts/Anton-Regular.woff"));
+const logo = `data:image/png;base64,${(await readFile(join(process.cwd(), "src/assets/brand/garms-media-logo.png"))).toString("base64")}`;
 
 /** Share image for the article, generated at build time. */
 export default async function ArticleOgImage() {
@@ -29,7 +30,7 @@ export default async function ArticleOgImage() {
           <span style={{ background: "#FF5A1F", color: "#111111", padding: "8px 18px", fontSize: 24, letterSpacing: 3 }}>
             THE GARMS PLAYBOOK
           </span>
-          <span style={{ fontSize: 30 }}>GARMS MEDIA</span>
+          <img src={logo} alt="" height={56} width={Math.round((56 * 2558) / 1039)} />
         </div>
         <div style={{ display: "flex", flexDirection: "column", fontSize: 150, lineHeight: 0.92 }}>
           <span>FROM SCROLLS</span>

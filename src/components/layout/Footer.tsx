@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { navLinks, site } from "@/content/site";
 import { CurrentYear } from "@/components/ui/CurrentYear";
-import { Wordmark } from "./Wordmark";
+import { Logo } from "./Logo";
 
 const socials = [
   { label: "Instagram", href: site.social.instagram },
@@ -15,8 +15,8 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-5 pt-20 pb-10 sm:px-8">
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-5">
-            <Link href="/#home" aria-label="GARMS MEDIA, back to top" className="inline-block rounded-sm">
-              <Wordmark className="[&_.display]:text-4xl" />
+            <Link href="/" aria-label="GARMS MEDIA homepage" className="inline-block rounded-sm">
+              <Logo alt="" className="h-16 w-auto sm:h-20" sizes="(min-width: 640px) 200px, 160px" />
             </Link>
             <p className="mt-5 max-w-sm leading-relaxed text-ash">{site.positioning}</p>
           </div>
