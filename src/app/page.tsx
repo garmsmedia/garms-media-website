@@ -3,6 +3,7 @@ import { About } from "@/components/sections/About";
 import { Services } from "@/components/sections/Services";
 import { Work } from "@/components/sections/Work";
 import { WhyGarms } from "@/components/sections/WhyGarms";
+import { Insights } from "@/components/sections/Insights";
 import { Team } from "@/components/sections/Team";
 import { Consultation } from "@/components/sections/Consultation";
 import { Contact } from "@/components/sections/Contact";
@@ -16,6 +17,7 @@ export default function HomePage() {
       <Services />
       <Work />
       <WhyGarms />
+      <Insights />
       <Team />
       <Consultation />
       <Contact />

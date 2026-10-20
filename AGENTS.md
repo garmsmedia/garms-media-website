@@ -39,12 +39,22 @@ One-page site that introduces GARMS, explains services, shows creative thinking,
 | 3 | Services (6 cards) | `sections/Services.tsx` | `#services` |
 | 4 | Selected Concepts / Speculative Work | `sections/Work.tsx` | `#work` |
 | 5 | Why GARMS? (orange) | `sections/WhyGarms.tsx` | — |
-| 6 | Team | `sections/Team.tsx` | `#team` |
-| 7 | Free Consultation (ink card on paper) | `sections/Consultation.tsx` | `#consultation` |
-| 8 | Contact | `sections/Contact.tsx` | `#contact` |
-| 9 | Footer | `layout/Footer.tsx` | — |
+| 6 | Insights / The GARMS Playbook (article preview) | `sections/Insights.tsx` | `#insights` |
+| 7 | Team | `sections/Team.tsx` | `#team` |
+| 8 | Free Consultation (ink card on paper) | `sections/Consultation.tsx` | `#consultation` |
+| 9 | Contact | `sections/Contact.tsx` | `#contact` |
+| 10 | Footer | `layout/Footer.tsx` | — |
 
-Nav links: Home, Services, Work, About, Contact + "Let's Talk" CTA.
+Nav links: Home, Services, Work, About, Insights, Contact + "Let's Talk" CTA.
+
+### Articles (Insights)
+
+- Article pages live at `src/app/insights/<slug>/page.tsx`; metadata and visual data in `src/content/articles/<slug>.ts`.
+- Reusable blocks: `components/article/ArticleParts.tsx` (numbered sections, paragraphs, pull quotes, "The goal" callouts) and `components/article/ArticleVisuals.tsx` (funnel, BANT, benchmarks, journey).
+- Approved article text is the source of truth: keep its facts, examples and figures. Mark conversion figures as objectives or assumptions, never as results.
+- **No em dashes (or en dashes) in published article copy**, including the shared header/footer text that renders on article pages.
+- GARMS MEDIA's funnel is B2B (brand founders and marketing managers). Keep it distinct from a clothing brand's own ecommerce funnel.
+- Add each new article to `src/app/sitemap.ts`.
 
 ## 5. Brand colours
 
@@ -165,7 +175,7 @@ supabase/migrations/    database schema for leads
 Before merging a visual change:
 - [ ] Uses colour tokens and the type scale above; orange used as an accent, not everywhere.
 - [ ] Section follows the pattern: numbered eyebrow → Anton `h2` → short supporting copy.
-- [ ] Alternates dark/light backgrounds (hero dark → about light → services dark → work light → why orange → team dark → consultation (dark card on light) → contact light → footer dark).
+- [ ] Alternates dark/light backgrounds (hero dark → about light → services dark → work light → why orange → insights light (dark article card) → team dark → consultation (dark card on light) → contact light → footer dark).
 - [ ] Hover effects are subtle (colour/translate), with no layout shift.
 - [ ] Checked at 390px and 1440px wide.
 

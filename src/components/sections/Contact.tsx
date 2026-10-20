@@ -11,7 +11,7 @@ export function Contact() {
       <div className="mx-auto grid max-w-7xl gap-14 px-5 py-24 sm:px-8 lg:grid-cols-12 lg:gap-10 lg:py-32">
         <div className="lg:col-span-5">
           <div className="lg:sticky lg:top-28">
-            <SectionHeading index="07" eyebrow="Contact" id="contact-title" eyebrowClassName="text-stone">
+            <SectionHeading index="08" eyebrow="Contact" id="contact-title" eyebrowClassName="text-stone">
               Let&apos;s make your brand{" "}
               <span className="inline-block bg-flame px-[0.12em] pt-[0.06em] leading-[1]">impossible</span> to ignore.
             </SectionHeading>

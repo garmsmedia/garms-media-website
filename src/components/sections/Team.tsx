@@ -18,7 +18,7 @@ export function Team() {
       <div className="mx-auto max-w-7xl px-5 py-24 sm:px-8 lg:py-32">
         <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
           <Reveal className="lg:col-span-7">
-            <SectionHeading index="05" eyebrow="Team" id="team-title">
+            <SectionHeading index="06" eyebrow="Team" id="team-title">
               The people <br className="hidden sm:block" />
               behind GARMS.
             </SectionHeading>
