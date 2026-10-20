@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+/*
+ * GARMS MEDIA design tokens.
+ * Change brand values here only — every component reads from these tokens.
+ * See AGENTS.md → "Brand colors" for contrast rules.
+ */
+@theme {
+  --color-ink: #111111; /* near black — primary background and text */
+  --color-paper: #f2f0ea; /* off-white — light backgrounds and text */
+  --color-flame: #ff5a1f; /* safety orange — accent + CTAs */
+  --color-stone: #5a5853; /* warm gray — secondary text on LIGHT backgrounds only */
+  --color-ash: #c9c6be; /* light gray — muted text on DARK backgrounds, dividers */
+
+  --font-display: var(--font-anton), "Arial Narrow", Impact, sans-serif;
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-instrument-serif), Georgia, serif;
+
+  --animate-marquee: marquee 40s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem; /* keeps anchored headings clear of the sticky header */
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background: var(--color-ink);
+    color: var(--color-paper);
+    font-family: var(--font-sans);
+  }
+
+  ::selection {
+    background: var(--color-flame);
+    color: var(--color-ink);
+  }
+
+  /* One consistent, highly visible focus ring across the site. */
+  :focus-visible {
+    outline: 3px solid var(--color-flame);
+    outline-offset: 3px;
+  }
+
+  .on-flame :focus-visible {
+    outline-color: var(--color-ink);
+  }
+}
+
+@layer components {
+  /* Oversized editorial headline used by every section. */
+  .display {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    line-height: 0.92;
+    letter-spacing: 0.005em;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  /* Scroll reveal. Only hides content once JS has loaded (html.js), so the
+     page is fully readable with JavaScript disabled. */
+  .js .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 700ms ease,
+      transform 700ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .js .reveal[data-visible="true"] {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Subtle film grain for an editorial print feel. */
+  .grain {
+    position: relative;
+    isolation: isolate;
+  }
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.07;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
