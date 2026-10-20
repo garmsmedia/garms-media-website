@@ -8,7 +8,8 @@ const marqueeItems = [
   "UGC & Creators",
   "Paid Social",
   "Analytics",
-  "Independent streetwear",
+  "Independent clothing brands",
+  "Streetwear",
   "Urban fashion",
   "Los Angeles",
 ];
@@ -16,33 +17,43 @@ const marqueeItems = [
 export function Hero() {
   return (
     <section id="home" aria-labelledby="hero-title" className="grain relative overflow-hidden bg-ink">
-      <div className="mx-auto grid max-w-7xl gap-12 px-5 pt-12 pb-16 sm:px-8 lg:grid-cols-12 lg:gap-8 lg:pt-20 lg:pb-24">
+      <div className="mx-auto grid max-w-7xl gap-12 px-5 pt-10 pb-16 sm:px-8 lg:grid-cols-12 lg:gap-8 lg:pt-14 lg:pb-20">
         {/* Copy */}
-        <div className="lg:col-span-7 lg:pt-6">
+        <div className="lg:col-span-7 lg:pt-2">
           <p className="eyebrow flex flex-wrap items-center gap-x-3 gap-y-2 text-ash">
             <span className="inline-flex items-center gap-2 rounded-full border border-paper/20 px-3 py-1.5 text-paper">
               <span aria-hidden="true" className="size-1.5 rounded-full bg-flame" />
               Social media marketing agency
             </span>
-            <span>Independent streetwear · Los Angeles</span>
+            <span>Independent clothing brands</span>
+            <span aria-hidden="true" className="hidden sm:inline">·</span>
+            <span>Los Angeles</span>
           </p>
 
+          {/* Primary message: what we do and who for. Four deliberate lines on every screen size. */}
           <h1
             id="hero-title"
-            className="display mt-8 text-[clamp(3.4rem,11.5vw,8.5rem)] text-paper"
+            className="display mt-7 text-[clamp(3rem,min(13.5vw,10.5vh),6.5rem)] text-paper"
           >
-            Your brand <br className="hidden sm:block" />
-            deserves <span className="text-flame">more</span> <br />
-            than just likes.
+            We grow <br />
+            independent <br />
+            <span className="text-flame">
+              clothing <br />
+              brands.
+            </span>
           </h1>
 
-          <p className="mt-8 max-w-xl text-lg leading-relaxed text-ash sm:text-xl">
-            We help independent streetwear brands turn creative content, engaged communities, and
-            smart social media strategies into{" "}
-            <em className="font-serif text-[1.15em] text-paper">real business growth.</em>
+          <p className="mt-7 max-w-xl text-xl leading-snug font-medium text-paper sm:text-2xl">
+            Through social media strategy, creative content, and campaigns that convert.
           </p>
 
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          {/* Original GARMS slogan, kept as a secondary tagline. */}
+          <p className="mt-5 flex items-center gap-3 font-serif text-xl text-ash italic sm:text-2xl">
+            <span aria-hidden="true" className="h-0.5 w-8 shrink-0 bg-flame" />
+            Your brand deserves more than just likes.
+          </p>
+
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <ButtonLink href="#contact">Let&apos;s Grow Your Brand</ButtonLink>
             <ButtonLink href="#services" variant="outline-light" arrow={false}>
               Explore Our Services
@@ -105,8 +116,8 @@ export function Hero() {
         </div>
         <p className="sr-only">
           Services: social media strategy, content creation, community management, UGC and creator
-          collaborations, paid social and analytics for independent streetwear and urban-fashion
-          brands in Los Angeles.
+          collaborations, paid social and analytics for independent clothing brands, including
+          streetwear and urban fashion, in Los Angeles.
         </p>
       </div>
     </section>
