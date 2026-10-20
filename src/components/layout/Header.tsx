@@ -1,15 +1,15 @@
 import Link from "next/link";
 import { navLinks } from "@/content/site";
 import { ButtonLink } from "@/components/ui/Button";
-import { Wordmark } from "./Wordmark";
+import { Logo } from "./Logo";
 import { MobileNav } from "./MobileNav";
 
 export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-paper/10 bg-ink/90 backdrop-blur-md supports-[backdrop-filter]:bg-ink/75">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-6 px-5 sm:px-8 lg:h-20">
-        <Link href="/#home" className="rounded-sm" aria-label="GARMS MEDIA, back to top">
-          <Wordmark />
+        <Link href="/" className="shrink-0 rounded-sm" aria-label="GARMS MEDIA homepage">
+          <Logo alt="" priority className="h-10 w-auto lg:h-14" sizes="(min-width: 1024px) 138px, 99px" />
         </Link>
 
         <nav aria-label="Main" className="hidden lg:block">

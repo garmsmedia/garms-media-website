@@ -78,6 +78,14 @@ Defined once as Tailwind tokens in `src/app/globals.css` (`@theme`). Never hard-
 
 Balance: black and off-white do the heavy lifting; orange is a strong but controlled accent (one highlighted word per headline at most).
 
+### Logo
+
+- Official logo: `src/assets/brand/garms-media-logo.png` (white "garms" with the hanger, orange "media", transparent background). Rendered by `components/layout/Logo.tsx` from lossless PNG sizes in `public/brand/`; regenerate them with `scripts/generate-brand-assets.py`, never by hand.
+- Never redraw, recolour, crop into, stretch or distort it. Size it by height only (`h-*` + `w-auto`).
+- White artwork: use it on **dark (ink) backgrounds only**. Never place it on cream/paper, and never put it in a black box on a light section.
+- Used in: header (links to `/`), footer, and the Open Graph share images. Avoid adding it elsewhere.
+- Favicons (`src/app/favicon.ico`, `icon.png`, `apple-icon.png`) use the hanger shape lifted exactly from the logo file, on an ink square.
+
 ## 6. Typography
 
 Fonts are self-hosted in `src/app/fonts/` (SIL Open Font License) and loaded with `next/font/local` in `src/app/layout.tsx`. Do not switch back to `next/font/google` without checking builds work offline/in CI.
@@ -133,7 +141,7 @@ src/
     fonts/              self-hosted fonts + licences
     privacy/            draft privacy policy
   components/
-    layout/             Header, MobileNav, Footer, Wordmark
+    layout/             Header, MobileNav, Footer, Logo
     sections/           one file per page section
     contact/            ContactForm (client)
     ui/                 Button, Icon, SectionHeading, Reveal, CurrentYear
