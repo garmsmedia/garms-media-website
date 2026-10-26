@@ -94,7 +94,7 @@ export function TwoFunnels() {
 /* ------------------------------------------------------------------ */
 
 const queries = [
-  "how to grow my streetwear brand online",
+  "how to grow my clothing brand online",
   "why am I getting likes but no sales?",
   "instagram marketing for clothing brands",
 ];

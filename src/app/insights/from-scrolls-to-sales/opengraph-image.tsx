@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 
-export const alt = "From Scrolls to Sales. A GARMS MEDIA playbook article for independent streetwear brands.";
+export const alt = "From Scrolls to Sales. A GARMS MEDIA playbook article for independent clothing brands.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
