@@ -11,7 +11,7 @@ export const site = {
   shortName: "GARMS",
   title: "GARMS MEDIA | Social Media Marketing for Independent Streetwear Brands",
   description:
-    "GARMS MEDIA is a creative social media marketing agency concept focused on helping independent streetwear and urban-fashion brands build communities and grow online.",
+    "GARMS MEDIA is a creative social media marketing agency concept helping independent clothing brands, including streetwear and urban fashion labels, build communities and grow online.",
   positioning:
     "Social media marketing for independent streetwear and urban-fashion brands in Los Angeles.",
   location: "Los Angeles, California",
