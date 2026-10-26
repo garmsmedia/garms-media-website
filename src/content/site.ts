@@ -9,11 +9,11 @@
 export const site = {
   name: "GARMS MEDIA",
   shortName: "GARMS",
-  title: "GARMS MEDIA | Social Media Marketing for Independent Streetwear Brands",
+  title: "GARMS MEDIA | Social Media Marketing for Independent Clothing Brands",
   description:
-    "GARMS MEDIA is a creative social media marketing agency concept focused on helping independent streetwear and urban-fashion brands build communities and grow online.",
+    "GARMS MEDIA is a creative social media marketing agency concept helping independent clothing brands, including streetwear and urban fashion labels, build communities and grow online.",
   positioning:
-    "Social media marketing for independent streetwear and urban-fashion brands in Los Angeles.",
+    "Social media marketing for independent clothing brands in Los Angeles.",
   location: "Los Angeles, California",
 
   /** Public site URL. Set NEXT_PUBLIC_SITE_URL in Vercel once a domain exists. */

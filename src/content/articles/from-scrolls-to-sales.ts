@@ -11,19 +11,19 @@ export const article = {
   slug: "from-scrolls-to-sales",
   href: "/insights/from-scrolls-to-sales",
   kicker: "The GARMS Playbook",
-  category: "Streetwear Marketing",
+  category: "Fashion Marketing",
   readTime: "5 min read",
   /** Publication date of this page (ISO). */
   published: "2026-10-20",
   title: "From Scrolls to Sales.",
   subtitle:
-    "How independent streetwear brands can turn online attention into real business opportunities.",
-  seoTitle: "From Scrolls to Sales: Social Media Marketing for Streetwear Brands",
+    "How independent clothing brands can turn online attention into real business opportunities.",
+  seoTitle: "From Scrolls to Sales: Social Media Marketing for Clothing Brands",
   description:
-    "How independent streetwear brands can turn online attention into real business opportunities. A practical look at social media marketing for streetwear brands and the inbound funnel GARMS MEDIA plans to use.",
+    "How independent clothing brands can turn online attention into real business opportunities. A practical look at social media marketing for clothing brands and the inbound funnel GARMS MEDIA plans to use.",
   /** Homepage preview copy. */
   summary:
-    "Likes are nice. Orders and real conversations are better. Learn how a conversion funnel works, how GARMS MEDIA plans to connect with streetwear founders, and how the same ideas can help your own brand grow online.",
+    "Likes are nice. Orders and real conversations are better. Learn how a conversion funnel works, how GARMS MEDIA plans to connect with independent clothing brand owners, and how the same ideas can help your own brand grow online.",
   takeaways: [
     { title: "Get Discovered", body: "Answer the questions your audience is already searching for." },
     { title: "Build Trust", body: "Show your culture, your thinking and your work, without overpromising." },

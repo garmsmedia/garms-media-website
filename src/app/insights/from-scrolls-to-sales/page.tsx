@@ -25,10 +25,11 @@ export const metadata: Metadata = {
   title: { absolute: `${article.seoTitle} | ${site.name}` },
   description: article.description,
   keywords: [
-    "social media marketing for streetwear brands",
-    "how to grow a streetwear brand online",
+    "social media marketing for clothing brands",
+    "how to grow a clothing brand online",
     "Instagram marketing for clothing brands",
-    "streetwear marketing agency Los Angeles",
+    "fashion marketing agency Los Angeles",
+    "social media marketing for streetwear brands",
     "social media agency for clothing brands",
     "conversion funnel",
   ],
@@ -137,13 +138,13 @@ export default function FromScrollsToSalesPage() {
               </div>
               <PullQuote>Are people just looking at your content, or are they actually becoming customers?</PullQuote>
               <P>
-                For independent streetwear brands, getting attention is only the beginning. The real challenge is
+                For independent clothing brands, getting attention is only the beginning. The real challenge is
                 turning that attention into meaningful interest, trust, and eventually sales.
               </P>
               <P>
                 At GARMS MEDIA, we believe good marketing should do more than make a brand look cool. It should help
                 the right people discover it, understand its value, and take the next step. That&apos;s what
-                social media marketing for streetwear brands should really be about.
+                social media marketing for clothing brands should really be about.
               </P>
               <P>
                 <Em>That&apos;s where a conversion funnel comes in.</Em>
@@ -213,13 +214,13 @@ export default function FromScrollsToSalesPage() {
         {/* ---------------------------------------------------------- 02 */}
         <ArticleSection id="get-discovered" number="02" title={<>First, we want to be there when you need <span className="underline decoration-flame decoration-[0.12em] underline-offset-[0.08em]">answers.</span></>}>
           <P lead>
-            Imagine you&apos;re running a streetwear brand in Los Angeles. Your latest collection looks great, but your
+            Imagine you&apos;re running an independent clothing brand in Los Angeles. Your latest collection looks great, but your
             Instagram engagement isn&apos;t translating into enough orders.
           </P>
           <P>You might search:</P>
           <List
             items={[
-              <>&ldquo;How to grow my streetwear brand online&rdquo;</>,
+              <>&ldquo;How to grow my clothing brand online&rdquo;</>,
               <>&ldquo;Why am I getting likes but no sales?&rdquo;</>,
               <>&ldquo;Instagram marketing for clothing brands&rdquo;</>,
             ]}
@@ -247,14 +248,14 @@ export default function FromScrollsToSalesPage() {
             different.
           </P>
           <P>
-            Our focus is independent streetwear and urban fashion. That means our content and{" "}
+            Our focus is independent clothing brands, including streetwear and urban fashion labels. That means our content and{" "}
             <Link href="/#services" className="font-semibold text-ink underline decoration-flame decoration-2 underline-offset-4 hover:decoration-ink">
               services
             </Link>{" "}
             are built around the realities of clothing brands: product drops, community building, creative storytelling,
             user-generated content, influencer collaborations, and ecommerce growth.
           </P>
-          <Figure caption="Original illustrations. Product drops, community, UGC and storytelling are where streetwear marketing lives.">
+          <Figure caption="Original illustrations. Product drops, community, UGC and storytelling are where fashion marketing lives.">
             <LookbookIllustration />
           </Figure>
           <P>
@@ -265,7 +266,7 @@ export default function FromScrollsToSalesPage() {
             , and educational content, we want to demonstrate how we think and what we could bring to a brand.
           </P>
           <PullQuote>No exaggerated promises. No pretending that one viral video solves everything.</PullQuote>
-          <P>Just relevant ideas, clear strategies, and an understanding of the culture surrounding streetwear.</P>
+          <P>Just relevant ideas, clear strategies, and an understanding of fashion culture.</P>
           <Goal>Turn initial curiosity into genuine interest.</Goal>
         </ArticleSection>
 
@@ -314,7 +315,7 @@ export default function FromScrollsToSalesPage() {
             <Em>It&apos;s about finding the right ones.</Em>
           </P>
           <P>
-            For GARMS MEDIA, a relevant lead could be an independent streetwear founder or fashion marketing manager who
+            For GARMS MEDIA, a relevant lead could be an independent clothing brand founder or fashion marketing manager who
             is interested in improving their online presence.
           </P>
           <dl className="my-10 grid max-w-3xl gap-4 sm:grid-cols-2">
@@ -373,8 +374,8 @@ export default function FromScrollsToSalesPage() {
         <ArticleSection id="your-brand" number="07" title={<>What does this mean for your <span className="text-flame">clothing brand?</span></>} tone="ink">
           <P lead>Here&apos;s the bigger picture.</P>
           <P>
-            The same principles we want to use to grow GARMS MEDIA can also help an independent streetwear brand build a
-            stronger digital presence. If you&apos;ve been wondering how to grow a streetwear brand online, start here.
+            The same principles we want to use to grow GARMS MEDIA can also help an independent clothing brand build a
+            stronger digital presence. If you&apos;ve been wondering how to grow a clothing brand online, start here.
           </P>
           <ol className="my-12 grid gap-px bg-paper/15 sm:grid-cols-2 lg:grid-cols-3">
             {[
@@ -431,7 +432,7 @@ export default function FromScrollsToSalesPage() {
               <div className="flex flex-col justify-end lg:col-span-4">
                 <p className="display text-4xl">GARMS MEDIA</p>
                 <p className="mt-3 font-serif text-2xl leading-snug italic">
-                  Creative thinking. Streetwear culture. Social media with a purpose.
+                  Creative thinking. Fashion culture. Social media with a purpose.
                 </p>
               </div>
             </div>
@@ -443,7 +444,7 @@ export default function FromScrollsToSalesPage() {
               Back to the homepage
             </Link>
             <p className="text-sm text-stone">
-              {site.name} is a university project exploring a streetwear marketing agency in Los Angeles.
+              {site.name} is a university project exploring a social media marketing agency for independent clothing brands in Los Angeles.
             </p>
           </div>
         </section>
