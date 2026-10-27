@@ -158,6 +158,11 @@ export const guide: Guide = {
   ],
   faq: [
     {
+      question: "How do I find influencers for my clothing brand?",
+      answer:
+        "Start with people who already tag or wear your brand, then search Instagram and TikTok by style, product type and location. Where it is available to your account, Instagram’s creator marketplace also lets brands find creators. Check audience fit and real engagement before reaching out.",
+    },
+    {
       question: "How much should a small brand pay influencers?",
       answer:
         "Rates vary widely with audience size, deliverables and usage rights, so ask creators for their rates and compare. Budget for product and shipping as well as fees.",

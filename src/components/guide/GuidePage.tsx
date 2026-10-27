@@ -23,6 +23,19 @@ function formatDate(iso: string) {
   return `${day} ${MONTHS[month - 1]} ${year}`;
 }
 
+/** Last real content change: the updated date if set, otherwise publication. */
+function modifiedDate(guide: GuideMeta) {
+  return guide.updated ?? guide.published;
+}
+
+/** Only show an "Updated" label when the content changed on a later day than publication. */
+function showUpdated(guide: GuideMeta) {
+  return Boolean(guide.updated && guide.updated !== guide.published);
+}
+
+/** The site's existing share image (src/app/opengraph-image.tsx), 1200 x 630. */
+const SHARE_IMAGE = { url: `${site.url}/opengraph-image`, width: 1200, height: 630 };
+
 export function guideMetadata(guide: GuideMeta): Metadata {
   return {
     title: { absolute: guide.metaTitle },
@@ -38,13 +51,16 @@ export function guideMetadata(guide: GuideMeta): Metadata {
       siteName: site.name,
       locale: "en_US",
       publishedTime: guide.published,
+      modifiedTime: modifiedDate(guide),
       authors: [AUTHOR],
       section: guide.category,
+      images: [{ ...SHARE_IMAGE, alt: `${site.name}: Social media marketing for independent clothing brands, including streetwear` }],
     },
     twitter: {
       card: "summary_large_image",
       title: guide.metaTitle,
       description: guide.metaDescription,
+      images: [SHARE_IMAGE.url],
     },
   };
 }
@@ -59,7 +75,8 @@ function jsonLd(guide: Guide) {
         headline: guide.h1,
         description: guide.metaDescription,
         datePublished: guide.published,
-        dateModified: guide.published,
+        dateModified: modifiedDate(guide),
+        image: { "@type": "ImageObject", ...SHARE_IMAGE },
         inLanguage: "en-US",
         articleSection: guide.category,
         keywords: guide.keyword,
@@ -77,11 +94,12 @@ function jsonLd(guide: Guide) {
         })),
       },
       {
+        // Real pages only: the visible "Insights" crumb links to a homepage
+        // section (/#insights), which is not a page of its own.
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: site.url },
-          { "@type": "ListItem", position: 2, name: "Insights", item: `${site.url}/#insights` },
-          { "@type": "ListItem", position: 3, name: guide.shortTitle, item: url },
+          { "@type": "ListItem", position: 2, name: guide.shortTitle, item: url },
         ],
       },
     ],
@@ -139,6 +157,12 @@ export function GuidePage({ guide }: { guide: Guide }) {
                   {AUTHOR}
                 </Link>{" "}
                 · <time dateTime={guide.published}>{formatDate(guide.published)}</time>
+                {showUpdated(guide) && (
+                  <>
+                    {" "}
+                    · Updated <time dateTime={guide.updated}>{formatDate(guide.updated!)}</time>
+                  </>
+                )}
               </p>
               <p className="mt-2 max-w-[62ch] text-sm leading-relaxed text-ash">
                 {site.name} is a university project exploring social media marketing for independent clothing brands.
@@ -276,6 +300,7 @@ export function GuidePage({ guide }: { guide: Guide }) {
             </Link>
             <p className="text-sm text-stone">
               By {AUTHOR}. Published {formatDate(guide.published)}.
+              {showUpdated(guide) && <> Updated {formatDate(guide.updated!)}.</>}
             </p>
           </div>
         </section>

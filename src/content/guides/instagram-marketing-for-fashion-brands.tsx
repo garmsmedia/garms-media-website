@@ -44,7 +44,7 @@ export const guide: Guide = {
       title: "How should fashion brands use Reels?",
       body: (
         <>
-          <P lead>Reels are the format most likely to reach people who don’t follow you yet, so they carry most of your discovery work.</P>
+          <P lead>Reels are where most of your discovery happens. Instagram says most Reels people see come from accounts they don’t follow yet.</P>
           <List
             items={[
               <>Show the product in the first two seconds. A strong opening frame matters more than a long intro.</>,
@@ -59,6 +59,14 @@ export const guide: Guide = {
             each size on screen and end with “Sizing guide in our highlights.” It answers the most common buying question and
             gives people a reason to save the Reel.
           </Callout>
+          <P>
+            Instagram’s own explanation of{" "}
+            <ExternalLink href="https://about.instagram.com/blog/announcements/instagram-ranking-explained">
+              how ranking works
+            </ExternalLink>{" "}
+            lists how likely someone is to reshare a Reel and watch it to the end among the most important signals, so
+            content worth sending to a friend has a real advantage.
+          </P>
           <P>
             Instagram publishes tips for creators and businesses on{" "}
             <ExternalLink href="https://creators.instagram.com/">Instagram for Creators</ExternalLink>, and you can see how
@@ -145,7 +153,7 @@ export const guide: Guide = {
             rows={[
               ["Reach (non-followers)", "Whether content is finding new people"],
               ["Saves", "Whether people found it useful or want to come back to it"],
-              ["Shares and sends", "Whether people think it is worth recommending to friends"],
+              ["Shares and sends", "Whether people think it is worth recommending, which Instagram says it weighs heavily for Reels"],
               ["Profile visits", "Whether content makes people curious about the brand"],
               ["Link taps and website sessions", "Whether interest turns into store visits"],
               ["Orders from Instagram", "Whether it drives revenue, tracked with UTM links in your store analytics"],
@@ -171,9 +179,9 @@ export const guide: Guide = {
         "A handful of specific, relevant hashtags is enough. Clear captions with words people search for, such as the product type and style, matter as much as hashtags.",
     },
     {
-      question: "Should a clothing brand buy followers?",
+      question: "How can a clothing brand get more Instagram followers?",
       answer:
-        "No. Bought followers don’t buy clothes, they distort your data and inauthentic activity can put your account at risk.",
+        "Post Reels regularly that show fit, styling and how pieces are made, make content worth saving or sending to a friend, collaborate with creators your customers follow and keep your profile clear about what you sell. Don’t buy followers: they don’t buy clothes and they distort your data.",
     },
     {
       question: "What is a good engagement rate on Instagram?",
@@ -187,6 +195,12 @@ export const guide: Guide = {
     },
   ],
   sources: [
+    {
+      title: "Instagram Ranking Explained",
+      publisher: "Instagram",
+      href: "https://about.instagram.com/blog/announcements/instagram-ranking-explained",
+      note: "Instagram’s explanation of how Feed, Stories, Explore and Reels are ranked, including the signals that matter most for Reels.",
+    },
     {
       title: "How can I see insights for my Instagram account?",
       publisher: "Instagram Help Center",

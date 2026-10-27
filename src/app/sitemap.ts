@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${site.url}${article.href}`, lastModified: article.published, changeFrequency: "yearly", priority: 0.8 },
     ...guides.map((guide) => ({
       url: `${site.url}${guide.href}`,
-      lastModified: guide.published,
+      lastModified: guide.updated ?? guide.published,
       changeFrequency: "yearly" as const,
       priority: 0.8,
     })),

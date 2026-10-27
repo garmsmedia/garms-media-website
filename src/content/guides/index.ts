@@ -26,6 +26,8 @@ export type GuideMeta = {
   summary: string;
   /** Publication date (ISO). */
   published: string;
+  /** Date the content last changed (ISO), if it changed after publication. */
+  updated?: string;
 };
 
 /** Full guide: metadata plus the page body (defined in ./<slug>.tsx). */
@@ -46,6 +48,8 @@ export type Guide = GuideMeta & {
 };
 
 const published = "2026-10-27";
+/** GEO review: sources, accuracy and FAQ updates. */
+const geoReview = "2026-10-27";
 
 export const guides: GuideMeta[] = [
   {
@@ -60,6 +64,7 @@ export const guides: GuideMeta[] = [
       "How independent clothing brands can use social media to build awareness, community, website traffic and sales, with organic vs paid tactics and priorities.",
     summary: "Awareness, community, traffic and sales: what social media can do for your label, and where to start.",
     published,
+    updated: geoReview,
   },
   {
     slug: "instagram-marketing-for-fashion-brands",
@@ -73,6 +78,7 @@ export const guides: GuideMeta[] = [
       "Instagram marketing for fashion brands: Reels, product storytelling, profile optimization, creator collabs and the metrics that matter for clothing labels.",
     summary: "Reels, product storytelling, profile basics, creator collabs and the metrics worth tracking.",
     published,
+    updated: geoReview,
   },
   {
     slug: "content-creation-for-clothing-brands",
@@ -99,6 +105,7 @@ export const guides: GuideMeta[] = [
       "How small fashion brands can choose creators, work with micro-influencers, compare UGC and partnerships, follow FTC disclosure rules and measure results.",
     summary: "Choosing creators, micro-influencers, UGC vs partnerships, FTC disclosure and measuring results.",
     published,
+    updated: geoReview,
   },
   {
     slug: "meta-ads-for-clothing-brands",
@@ -112,6 +119,7 @@ export const guides: GuideMeta[] = [
       "How clothing brands can use Meta Ads on Instagram and Facebook: objectives, audiences, creative testing, landing pages, tracking and small budgets.",
     summary: "Objectives, audiences, creative testing, landing pages and tracking, with small budgets in mind.",
     published,
+    updated: geoReview,
   },
   {
     slug: "social-media-strategy-for-clothing-brands",
@@ -125,6 +133,7 @@ export const guides: GuideMeta[] = [
       "Build a social media strategy for an independent clothing brand: objectives, target customers, platforms, content pillars, a content calendar and KPIs.",
     summary: "Seven steps from objectives and customers to content pillars, a calendar and KPIs.",
     published,
+    updated: geoReview,
   },
 ];
 

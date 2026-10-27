@@ -63,7 +63,7 @@ export const guide: Guide = {
       title: "How do you test ad creative?",
       body: (
         <>
-          <P lead>Creative is usually the biggest lever a small brand controls. Test angles, not tiny tweaks.</P>
+          <P lead>Creative is the lever a small brand controls most directly. Test angles, not tiny tweaks.</P>
           <List
             items={[
               <>Run three to five ads per test, each with a different angle, and keep everything else the same.</>,
@@ -143,7 +143,7 @@ export const guide: Guide = {
           <List
             items={[
               <>Concentrate spend in one or two campaigns instead of spreading it thinly across many.</>,
-              <>Let a test run for at least a week before making big changes, because results swing day to day.</>,
+              <>Let a test run for at least a week before making big changes. Meta’s{" "}<ExternalLink href="https://www.facebook.com/business/help/112167992830700/">guide to the learning phase</ExternalLink>{" "}explains that significant edits, such as pausing or changing the audience, creative or optimization event, can restart it.</>,
               <>If purchases are too rare for Meta to learn from, optimize temporarily for an earlier step such as add-to-cart.</>,
               <>Only spend what you can afford to treat as the cost of learning. No campaign is guaranteed to be profitable.</>,
             ]}
@@ -158,6 +158,11 @@ export const guide: Guide = {
     },
   ],
   faq: [
+    {
+      question: "Do Meta Ads work for small clothing brands?",
+      answer:
+        "They can, but results are never guaranteed. Small brands give themselves the best chance when purchase tracking works, the product page converts, creative has been tested organically first and the budget allows a test to run for at least a week.",
+    },
     {
       question: "How much should a small clothing brand spend on Meta Ads?",
       answer:
@@ -185,6 +190,12 @@ export const guide: Guide = {
     },
   ],
   sources: [
+    {
+      title: "About the learning phase",
+      publisher: "Meta Business Help Center",
+      href: "https://www.facebook.com/business/help/112167992830700/",
+      note: "How Meta’s delivery system learns after an ad set launches or is significantly edited.",
+    },
     {
       title: "Choosing Meta Ads Manager advertising objectives",
       publisher: "Meta Business Help Center",
