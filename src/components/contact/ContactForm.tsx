@@ -108,6 +108,17 @@ function ContactFormInner({ configured, demo, onReset }: { configured: boolean; 
 
   return (
     <form action={formAction} onSubmit={handleSubmit} noValidate aria-describedby="form-note" className="space-y-7">
+      {configured && !demo && (
+        <p id="form-note" className="flex gap-3 border-l-4 border-flame bg-ink/[0.04] p-4 text-sm leading-relaxed text-ink">
+          <Icon name="info" className="mt-0.5 size-5 shrink-0" />
+          <span>
+            <strong>This is an academic demonstration.</strong> GARMS MEDIA is a university project,
+            not an operating marketing agency. Information submitted through this form will be
+            securely stored and used solely for academic purposes by the GARMS MEDIA project team.
+            <span className="sr-only"> All fields are required unless marked optional.</span>
+          </span>
+        </p>
+      )}
       {demo && (
         <p id="form-note" className="flex gap-3 border-l-4 border-flame bg-ink/[0.04] p-4 text-sm leading-relaxed text-ink">
           <Icon name="info" className="mt-0.5 size-5 shrink-0" />
@@ -130,7 +141,6 @@ function ContactFormInner({ configured, demo, onReset }: { configured: boolean; 
       )}
       {/* Disabled (all fields + button) until lead storage is configured, unless in demo mode. */}
       <fieldset disabled={!enabled} className="m-0 min-w-0 space-y-7 border-0 p-0 disabled:opacity-60">
-      {configured && !demo && <p id="form-note" className="sr-only">All fields are required unless marked optional.</p>}
 
       {/* Honeypot (hidden from people and assistive tech). */}
       <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
