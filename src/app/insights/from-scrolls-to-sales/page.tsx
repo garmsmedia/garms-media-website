@@ -340,6 +340,23 @@ export default function FromScrollsToSalesPage() {
             When those pieces align, the next step could be a discovery call, a tailored proposal, and potentially a new
             collaboration.
           </P>
+          <P>
+            Whether or not we end up working together, we want everyone who gets in touch to leave with something
+            useful.
+          </P>
+          <P>Our planned approach after an enquiry is simple:</P>
+          <List
+            items={[
+              <>Acknowledge every enquiry personally, so no one is left wondering whether their message arrived.</>,
+              <>Share relevant educational resources, like our Playbook articles, based on what the brand told us.</>,
+              <>Offer a few practical recommendations for the marketing challenge they described.</>,
+              <>Follow up thoughtfully, without pressure, to see whether those ideas helped.</>,
+            ]}
+          />
+          <P>
+            That&apos;s the Delight stage of inbound marketing: keep adding value after the first conversation, so
+            trust keeps growing.
+          </P>
           <Goal>Build relationships with brands we can genuinely help.</Goal>
         </ArticleSection>
 
