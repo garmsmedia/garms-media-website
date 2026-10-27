@@ -117,7 +117,7 @@ export const guide: Guide = {
           <P lead>Engagement is a two-way habit, not a metric you wait for.</P>
           <List
             items={[
-              <>Reply to comments in the first hour after posting and answer DMs the same day where you can.</>,
+              <>Reply to comments soon after posting, while the conversation is active, and answer DMs the same day where you can.</>,
               <>Use Story stickers such as polls and questions to invite low-effort replies.</>,
               <>Reshare customer posts, always with permission and credit.</>,
               <>Use Collab posts with creators so the post appears on both profiles.</>,
@@ -145,7 +145,7 @@ export const guide: Guide = {
             rows={[
               ["Reach (non-followers)", "Whether content is finding new people"],
               ["Saves", "Whether people found it useful or want to come back to it"],
-              ["Shares and sends", "Whether it is worth recommending, a strong signal for discovery"],
+              ["Shares and sends", "Whether people think it is worth recommending to friends"],
               ["Profile visits", "Whether content makes people curious about the brand"],
               ["Link taps and website sessions", "Whether interest turns into store visits"],
               ["Orders from Instagram", "Whether it drives revenue, tracked with UTM links in your store analytics"],

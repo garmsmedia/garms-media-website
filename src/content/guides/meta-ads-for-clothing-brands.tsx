@@ -49,7 +49,7 @@ export const guide: Guide = {
           <P lead>Think in two groups: people who don’t know you yet, and people who already do.</P>
           <List
             items={[
-              <><Em>New audiences.</Em> Start broad: the locations you ship to, a sensible age range and few or no interests. Meta’s delivery system often finds buyers better than narrow manual targeting, provided your creative is clear about who it is for.</>,
+              <><Em>New audiences.</Em> Start broad: the locations you ship to, a sensible age range and few or no interests. Test this against a narrower audience rather than assuming either works better, and make sure your creative is clear about who it is for.</>,
               <><Em>Warm audiences.</Em> Website visitors, people who added to cart, Instagram engagers and video viewers. They are smaller but more likely to buy.</>,
               <><Em>Existing customers.</Em> Exclude recent buyers from first-purchase campaigns, or invite them back for a new drop.</>,
               <><Em>Physical stores.</Em> Target a radius around your shop for in-store events, new arrivals and seasonal sales.</>,
@@ -116,7 +116,7 @@ export const guide: Guide = {
           <P lead>Without reliable tracking, Meta can’t optimize for purchases and you can’t tell which ads pay off.</P>
           <List
             items={[
-              <><Em>Meta Pixel.</Em> A piece of code on your site that records actions such as viewing a product, adding to cart and purchasing. Most store platforms, including Shopify, offer an integration so you don’t need to code.</>,
+              <><Em>Meta Pixel.</Em> A piece of code on your site that records actions such as viewing a product, adding to cart and purchasing. Many store platforms, including Shopify, offer an integration so you don’t need to code.</>,
               <><Em>Conversions API.</Em> Sends the same events from your server, which helps when browsers block tracking. Use it alongside the Pixel.</>,
               <><Em>Standard events.</Em> Make sure at least ViewContent, AddToCart, InitiateCheckout and Purchase fire correctly, and check them with the test events tool in Events Manager.</>,
               <><Em>UTM parameters.</Em> Tag ad links so your store analytics can confirm what Meta reports.</>,

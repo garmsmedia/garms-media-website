@@ -141,20 +141,13 @@ export const guide: Guide = {
       title: "How do you know if social media is working?",
       body: (
         <>
-          <P lead>Match each measure to the job you want social media to do.</P>
-          <Table
-            caption="Useful measures by goal"
-            head={["Goal", "What to track"]}
-            rows={[
-              ["Awareness", "Reach, views and accounts reached who don’t follow you yet"],
-              ["Community", "Saves, shares, comments, Story replies and DM conversations"],
-              ["Traffic", "Link clicks and sessions from social in your store analytics"],
-              ["Sales", "Orders and revenue from social, conversion rate and discount code redemptions"],
-            ]}
-          />
+          <P lead>Match each measure to the job you want social media to do, and review it monthly against your own previous months.</P>
           <P>
-            Review these monthly and compare against your own previous months rather than other brands. Likes on their own
-            say little about whether people will buy.
+            Our strategy guide lists{" "}
+            <TextLink href="/insights/social-media-strategy-for-clothing-brands#kpis">example KPIs for each objective</TextLink>
+            , and the Instagram guide explains{" "}
+            <TextLink href="/insights/instagram-marketing-for-fashion-brands#metrics">which Instagram metrics matter</TextLink>.
+            Likes on their own say little about whether people will buy.
           </P>
         </>
       ),
@@ -164,7 +157,7 @@ export const guide: Guide = {
     {
       question: "How long does social media marketing take to work for a clothing brand?",
       answer:
-        "Expect organic growth to take months rather than weeks. Most brands need two to three months of consistent posting to learn which content resonates, while paid campaigns can drive traffic faster but still need testing.",
+        "Expect organic growth to take months rather than weeks. Plan on at least two to three months of consistent posting to learn which content resonates, while paid campaigns can drive traffic faster but still need testing.",
     },
     {
       question: "How often should a small clothing brand post?",
