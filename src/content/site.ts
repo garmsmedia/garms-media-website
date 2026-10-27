@@ -17,19 +17,16 @@ export const site = {
   location: "Los Angeles, California",
 
   /**
-   * GARMS MEDIA is a university demonstration project, not a real agency.
-   * While false, the contact form works as a demo only: nothing typed into it
-   * is sent to the server or stored. The Supabase lead storage stays in place
-   * for possible future use.
+   * GARMS MEDIA is a university demonstration project, not an operating agency.
+   * true: valid form submissions are stored in Supabase (see /privacy).
+   * false: demo only, nothing typed into the form is sent to the server or stored.
+   * Update /privacy whenever this changes.
    */
-  enquiriesOpen: false,
+  enquiriesOpen: true,
 
   /** Shown after a valid demo submission (when enquiriesOpen is false). */
   demoSubmitMessage:
     "Demo only: your message was not sent or stored. GARMS MEDIA is a university project and isn't accepting enquiries.",
-
-  /** Contact for privacy questions (shown on /privacy). */
-  privacyEmail: "garmsmedia.agency@gmail.com",
 
   /** Public site URL. Set NEXT_PUBLIC_SITE_URL in Vercel once a domain exists. */
   url:
@@ -38,8 +35,8 @@ export const site = {
       ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
       : "http://localhost:3000"),
 
-  /** PLACEHOLDER — confirmed contact email, e.g. "hello@yourdomain.com". */
-  email: null as string | null,
+  /** Official contact email (Contact section, footer and /privacy). */
+  email: "garmsmedia.agency@gmail.com" as string | null,
 
   /** PLACEHOLDER — full profile URLs, e.g. "https://www.instagram.com/handle". */
   social: {

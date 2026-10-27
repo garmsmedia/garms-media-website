@@ -168,7 +168,7 @@ supabase/migrations/    database schema for leads
 - Validation rules in `src/lib/contact/validation.ts` are shared by the browser and the server action; the server is the source of truth.
 - Spam protection: honeypot field, minimum fill time, length limits, in-memory IP rate limit (light protection only on serverless).
 - Storage: `src/lib/contact/leads.ts` writes to Supabase via REST when `SUPABASE_URL` and `SUPABASE_SECRET_KEY` are set. Otherwise the whole form is visibly **disabled** (fields and button) with a notice that enquiries aren't open yet. Keep it disabled until a real backend AND a reviewed privacy policy are ready.
-- **Demo mode (current):** GARMS is a university demonstration, so `site.enquiriesOpen` is `false`. The form stays usable but validates in the browser only and never submits (the server action also discards anything it receives). Supabase stays configured for possible future use. Rewrite `/privacy` before ever setting it to `true`.
+- **Academic demonstration:** GARMS is a university project. `site.enquiriesOpen` is `true`, so valid submissions are stored in Supabase, with a notice above the form saying they're used solely for academic purposes. Setting it to `false` switches to demo mode: the form validates in the browser only and never submits (the server action also discards anything it receives). Update `/privacy` whenever this changes.
 - The Free Consultation CTA uses the same condition: while enquiries are closed it is visibly disabled with a "Coming soon" note. It only ever links to `#contact` — never an external booking platform.
 - Never log personal data. Never expose the secret key to the browser.
 
