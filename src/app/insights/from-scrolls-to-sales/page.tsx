@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { article } from "@/content/articles/from-scrolls-to-sales";
+import { guides } from "@/content/guides";
 import { site } from "@/content/site";
 import { ButtonLink } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
@@ -415,6 +416,28 @@ export default function FromScrollsToSalesPage() {
           <P>A strong social media strategy connects creativity with a clear purpose.</P>
           <PullQuote tone="ink">And for an independent brand, that connection can make all the difference.</PullQuote>
         </ArticleSection>
+
+        {/* ---------------------------------------------------------- MORE GUIDES */}
+        <section aria-labelledby="more-guides-title" className="bg-paper px-5 pt-20 text-ink sm:px-8 lg:pt-28">
+          <div className="mx-auto max-w-7xl border-t-4 border-ink pt-6">
+            <p className="eyebrow text-stone">Keep reading</p>
+            <h2 id="more-guides-title" className="display mt-4 text-[clamp(2.25rem,5vw,3.75rem)]">
+              More from the GARMS Playbook
+            </h2>
+            <ul className="mt-10 grid gap-px bg-ink/15 sm:grid-cols-2 lg:grid-cols-3">
+              {guides.map((guide) => (
+                <li key={guide.slug} className="bg-paper">
+                  <Link href={guide.href} className="group flex h-full flex-col p-6 transition-colors duration-300 hover:bg-ink/[0.04]">
+                    <span className="eyebrow text-stone">{guide.shortTitle}</span>
+                    <span className="mt-3 text-lg font-bold leading-snug text-ink group-hover:underline group-hover:decoration-flame group-hover:decoration-2">
+                      {guide.h1}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
 
         {/* ---------------------------------------------------------- CTA */}
         <section aria-labelledby="article-cta-title" className="bg-paper px-5 py-20 sm:px-8 lg:py-28">

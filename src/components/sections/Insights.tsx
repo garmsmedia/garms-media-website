@@ -4,8 +4,10 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ButtonLink } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { ScrollToSaleGraphic } from "@/components/visuals/ScrollToSaleGraphic";
+import { Icon } from "@/components/ui/Icon";
+import { guides } from "@/content/guides";
 
-/** Homepage preview of the featured GARMS Playbook article. */
+/** Homepage preview of the featured GARMS Playbook article, plus the guides hub. */
 export function Insights() {
   return (
     <section id="insights" aria-labelledby="insights-title" className="bg-paper text-ink">
@@ -64,6 +66,39 @@ export function Insights() {
               </div>
             </div>
           </article>
+        </Reveal>
+
+        {/* Guides hub: one landing page per topic. */}
+        <Reveal delay={100} className="mt-20">
+          <div className="flex flex-col gap-4 border-t-4 border-ink pt-6 lg:flex-row lg:items-end lg:justify-between">
+            <h3 id="insights-guides-title" className="display text-[clamp(2.25rem,5vw,3.75rem)]">
+              Guides for clothing brand founders
+            </h3>
+            <p className="max-w-md leading-relaxed text-stone">
+              Straight answers to the questions independent clothing brands ask about growing on social media.
+            </p>
+          </div>
+          <ul aria-labelledby="insights-guides-title" className="mt-10 grid gap-px bg-ink/15 sm:grid-cols-2 lg:grid-cols-3">
+            {guides.map((guide, i) => (
+              <li key={guide.slug} className="bg-paper">
+                <Link href={guide.href} className="group flex h-full flex-col p-6 transition-colors duration-300 hover:bg-ink/[0.04] sm:p-8">
+                  <span className="flex items-center justify-between">
+                    <span aria-hidden="true" className="display text-3xl text-flame">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="eyebrow text-stone">{guide.shortTitle}</span>
+                  </span>
+                  <span className="display mt-5 text-2xl text-ink group-hover:underline group-hover:decoration-flame group-hover:decoration-2">
+                    {guide.h1}
+                  </span>
+                  <span className="mt-3 leading-relaxed text-stone">{guide.summary}</span>
+                  <span className="mt-auto pt-5">
+                    <Icon name="arrow" className="size-5 text-ink transition-transform duration-200 group-hover:translate-x-1" />
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </Reveal>
       </div>
     </section>

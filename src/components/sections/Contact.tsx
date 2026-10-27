@@ -24,7 +24,7 @@ export function Contact() {
                 <dt className="w-20 shrink-0 font-semibold uppercase tracking-[0.14em] text-stone">Email</dt>
                 <dd>
                   {site.email ? (
-                    <a href={`mailto:${site.email}`} className="font-semibold underline underline-offset-4">
+                    <a href={`mailto:${site.email}`} className="font-semibold underline underline-offset-4 [overflow-wrap:anywhere]">
                       {site.email}
                     </a>
                   ) : (
