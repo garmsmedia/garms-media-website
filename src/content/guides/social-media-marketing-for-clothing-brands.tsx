@@ -88,7 +88,7 @@ export const guide: Guide = {
             rows={[
               ["Instagram", "Visual catalog, Reels for discovery, Stories and DMs for relationships, product tagging where eligible"],
               ["TikTok", "Discovery through short, personality-led video such as try-ons, packing orders and founder stories"],
-              ["Pinterest", "Outfit planning and style inspiration, with pins that keep sending traffic long after posting"],
+              ["Pinterest", "Outfit planning and style inspiration, with pins that can keep sending traffic after posting"],
               ["Facebook", "Local communities, events and groups, plus the same ad system as Instagram through Meta"],
             ]}
           />
@@ -154,6 +154,11 @@ export const guide: Guide = {
     },
   ],
   faq: [
+    {
+      question: "What is the best social media platform for a clothing brand?",
+      answer:
+        "There is no single best platform. For most clothing brands Instagram is a sensible main channel because it combines discovery, a browsable profile and direct messages, while TikTok suits personality-led video and Pinterest suits style inspiration. Choose the one or two your own customers use most.",
+    },
     {
       question: "How long does social media marketing take to work for a clothing brand?",
       answer:

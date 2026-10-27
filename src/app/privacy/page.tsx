@@ -5,6 +5,7 @@ import { site } from "@/content/site";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "How the GARMS MEDIA university project collects, stores and uses information sent through its contact form.",
+  alternates: { canonical: "/privacy" },
 };
 
 /**

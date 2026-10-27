@@ -53,8 +53,8 @@ export const guide: Guide = {
           />
           <P>
             Build this from evidence: post-purchase surveys, DMs, reviews, conversations in store and the audience data in
-            your Instagram insights. A short question at checkout, such as “Where did you hear about us?”, is one of the
-            most useful things a small brand can add.
+            your Instagram insights. A short question at checkout, such as “Where did you hear about us?”, is a simple,
+            useful addition for a small brand.
           </P>
         </>
       ),
