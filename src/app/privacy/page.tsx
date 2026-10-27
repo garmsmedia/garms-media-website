@@ -19,8 +19,8 @@ export default function PrivacyPage() {
         <p className="eyebrow inline-block bg-flame px-3 py-1.5 text-ink">Draft — placeholder</p>
         <h1 className="display mt-6 text-[clamp(3rem,9vw,5.5rem)]">Privacy Policy</h1>
         <p className="mt-6 text-lg leading-relaxed text-stone">
-          This is a working draft for an early-stage agency concept. It will be completed and reviewed
-          before the website starts collecting enquiries.
+          This is a working draft for a university project. A complete, reviewed version will replace
+          it soon.
         </p>
 
         <div className="mt-12 space-y-10 leading-relaxed text-stone [&_h2]:text-xl [&_h2]:font-bold [&_h2]:text-ink">
@@ -40,10 +40,10 @@ export default function PrivacyPage() {
             </p>
           </section>
           <section>
-            <h2>Where it would be stored</h2>
+            <h2>Where it is stored</h2>
             <p className="mt-3">
-              Enquiries would be stored securely with our database provider (planned: Supabase). Right
-              now the form is not connected, so nothing you type is sent or stored.
+              The contact form is live. Enquiries you send through it are stored with our database
+              provider, Supabase.
             </p>
           </section>
           <section>
