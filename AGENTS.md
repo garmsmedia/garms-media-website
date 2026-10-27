@@ -56,6 +56,12 @@ Nav links: Home, Services, Work, About, Insights, Contact + "Let's Talk" CTA.
 - GARMS MEDIA's funnel is B2B (brand founders and marketing managers). Keep it distinct from a clothing brand's own ecommerce funnel.
 - Add each new article to `src/app/sitemap.ts`.
 
+### Guides (SEO landing pages)
+
+- Six topic guides live at `src/app/insights/<slug>/page.tsx`, each a thin route that renders `components/guide/GuidePage.tsx` with its content from `src/content/guides/<slug>.tsx`. Shared metadata (H1, meta title, description, summary) is in `src/content/guides/index.ts`, which also feeds the homepage Insights hub, the sitemap and related links.
+- Each guide: H1 = the exact search question, then a direct answer of exactly three sentences, numbered H2 sections, an FAQ (also emitted as FAQPage JSON-LD), sources and related reading.
+- Meta titles max 60 characters (set as absolute titles), meta descriptions max 155. Cite only real, checkable sources. No invented statistics, results or client work.
+
 ## 5. Brand colours
 
 Defined once as Tailwind tokens in `src/app/globals.css` (`@theme`). Never hard-code brand hex values in components — use the token classes.
