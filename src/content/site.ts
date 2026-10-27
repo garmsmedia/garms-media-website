@@ -16,6 +16,21 @@ export const site = {
     "Social media marketing for independent clothing brands in Los Angeles.",
   location: "Los Angeles, California",
 
+  /**
+   * GARMS MEDIA is a university demonstration project, not a real agency.
+   * While false, the contact form works as a demo only: nothing typed into it
+   * is sent to the server or stored. The Supabase lead storage stays in place
+   * for possible future use.
+   */
+  enquiriesOpen: false,
+
+  /** Shown after a valid demo submission (when enquiriesOpen is false). */
+  demoSubmitMessage:
+    "Demo only: your message was not sent or stored. GARMS MEDIA is a university project and isn't accepting enquiries.",
+
+  /** Contact for privacy questions (shown on /privacy). */
+  privacyEmail: "garmsmedia.agency@gmail.com",
+
   /** Public site URL. Set NEXT_PUBLIC_SITE_URL in Vercel once a domain exists. */
   url:
     process.env.NEXT_PUBLIC_SITE_URL ??
