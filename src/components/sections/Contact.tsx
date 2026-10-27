@@ -41,7 +41,7 @@ export function Contact() {
         </div>
 
         <div className="lg:col-span-6 lg:col-start-7">
-          <ContactForm configured={configured} />
+          <ContactForm configured={configured} demo={!site.enquiriesOpen} />
         </div>
       </div>
     </section>

@@ -1,7 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { startTransition, useActionState, useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
+import {
+  startTransition,
+  useActionState,
+  useEffect,
+  useRef,
+  useState,
+  useSyncExternalStore,
+  type FormEvent,
+  type ReactNode,
+} from "react";
 import { submitContact, type ContactState } from "@/app/actions/contact";
 import { serviceOptions } from "@/content/services";
 import {
@@ -11,6 +20,7 @@ import {
   type ContactField,
   type FieldErrors,
 } from "@/lib/contact/validation";
+import { site } from "@/content/site";
 import { Icon } from "@/components/ui/Icon";
 import { buttonClasses } from "@/components/ui/Button";
 
@@ -18,20 +28,27 @@ const initialState: ContactState = { status: "idle" };
 
 const fieldOrder: ContactField[] = ["fullName", "email", "brand", "website", "service", "message", "consent"];
 
+const noopSubscribe = () => () => {};
+
 const inputClass =
   "mt-2 block w-full rounded-none border-0 border-b-2 border-ink/25 bg-transparent px-0 py-3 text-base text-ink placeholder:text-stone/70 transition-colors focus:border-ink focus:ring-0 focus-visible:outline-offset-4 aria-[invalid=true]:border-[#b42318]";
 
 /**
  * Contact form. Client-side validation for instant feedback; the server action
  * re-validates and decides what happens to the data.
+ * In demo mode the form validates in the browser and never sends anything.
  * Wrapped by <ContactFormShell> so "send another message" remounts a fresh form.
  */
-function ContactFormInner({ configured, onReset }: { configured: boolean; onReset: () => void }) {
+function ContactFormInner({ configured, demo, onReset }: { configured: boolean; demo: boolean; onReset: () => void }) {
   const [state, formAction, pending] = useActionState(submitContact, initialState);
   const [clientErrors, setClientErrors] = useState<FieldErrors | null>(null);
   const [message, setMessage] = useState("");
   const startedAt = useRef(0);
   const startedAtInput = useRef<HTMLInputElement>(null);
+  // Demo submit stays disabled until JavaScript runs, so nothing can be posted without it.
+  const hydrated = useSyncExternalStore(noopSubscribe, () => true, () => false);
+  const [demoSubmitted, setDemoSubmitted] = useState(false);
+  const enabled = configured || demo;
 
   useEffect(() => {
     startedAt.current = Date.now();
@@ -43,7 +60,7 @@ function ContactFormInner({ configured, onReset }: { configured: boolean; onRese
   // lose what they typed). Without JavaScript, `action` still posts to the server.
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (!configured) return;
+    if (!enabled) return;
     const form = e.currentTarget;
     const found = validateContact(readContactForm(new FormData(form)));
     if (Object.keys(found).length > 0) {
@@ -53,12 +70,17 @@ function ContactFormInner({ configured, onReset }: { configured: boolean; onRese
       return;
     }
     setClientErrors(null);
+    if (demo) {
+      setDemoSubmitted(true);
+      return;
+    }
     if (startedAtInput.current) startedAtInput.current.value = String(startedAt.current);
     const data = new FormData(form);
     startTransition(() => formAction(data));
   }
 
   function clearError(field: ContactField) {
+    setDemoSubmitted(false);
     if (clientErrors?.[field]) setClientErrors({ ...clientErrors, [field]: undefined });
   }
 
@@ -77,11 +99,26 @@ function ContactFormInner({ configured, onReset }: { configured: boolean; onRese
     );
   }
 
-  const showBanner = state.status !== "idle" && state.status !== "invalid";
+  const banner = demoSubmitted
+    ? { status: "demo", message: site.demoSubmitMessage }
+    : state.status !== "idle" && state.status !== "invalid"
+      ? state
+      : null;
+  const infoBanner = banner?.status === "demo" || banner?.status === "not_configured";
 
   return (
     <form action={formAction} onSubmit={handleSubmit} noValidate aria-describedby="form-note" className="space-y-7">
-      {!configured && (
+      {demo && (
+        <p id="form-note" className="flex gap-3 border-l-4 border-flame bg-ink/[0.04] p-4 text-sm leading-relaxed text-ink">
+          <Icon name="info" className="mt-0.5 size-5 shrink-0" />
+          <span>
+            <strong>This is an academic demonstration.</strong> GARMS MEDIA is a university project,
+            not a real agency, and isn&apos;t accepting enquiries. Feel free to try the form: nothing
+            you type is sent or stored.
+          </span>
+        </p>
+      )}
+      {!enabled && (
         <p id="form-note" className="flex gap-3 border-l-4 border-flame bg-ink/[0.04] p-4 text-sm leading-relaxed text-ink">
           <Icon name="info" className="mt-0.5 size-5 shrink-0" />
           <span>
@@ -91,9 +128,9 @@ function ContactFormInner({ configured, onReset }: { configured: boolean; onRese
           </span>
         </p>
       )}
-      {/* Disabled (all fields + button) until lead storage is configured. */}
-      <fieldset disabled={!configured} className="m-0 min-w-0 space-y-7 border-0 p-0 disabled:opacity-60">
-      {configured && <p id="form-note" className="sr-only">All fields are required unless marked optional.</p>}
+      {/* Disabled (all fields + button) until lead storage is configured, unless in demo mode. */}
+      <fieldset disabled={!enabled} className="m-0 min-w-0 space-y-7 border-0 p-0 disabled:opacity-60">
+      {configured && !demo && <p id="form-note" className="sr-only">All fields are required unless marked optional.</p>}
 
       {/* Honeypot (hidden from people and assistive tech). */}
       <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
@@ -221,8 +258,9 @@ function ContactFormInner({ configured, onReset }: { configured: boolean; onRese
             className="mt-1 size-5 shrink-0 cursor-pointer accent-[#111111]"
           />
           <label htmlFor="consent" className="text-sm leading-relaxed text-stone">
-            I agree that GARMS MEDIA may use these details to reply to my enquiry, as described in
-            the{" "}
+            {demo
+              ? "Demo checkbox: on a live site, this would confirm that GARMS MEDIA may use these details to reply to your enquiry. See the "
+              : "I agree that GARMS MEDIA may use these details to reply to my enquiry, as described in the "}
             <Link href="/privacy" className="font-semibold text-ink underline underline-offset-4 hover:no-underline">
               Privacy Policy
             </Link>
@@ -233,14 +271,14 @@ function ContactFormInner({ configured, onReset }: { configured: boolean; onRese
       </div>
 
       <div aria-live="polite" aria-atomic="true">
-        {showBanner && state.message && (
+        {banner?.message && (
           <p
             className={`flex gap-3 p-4 text-sm leading-relaxed ${
-              state.status === "not_configured" ? "border-l-4 border-ink bg-flame/20 text-ink" : "border-l-4 border-[#b42318] bg-[#b42318]/10 text-ink"
+              infoBanner ? "border-l-4 border-ink bg-flame/20 text-ink" : "border-l-4 border-[#b42318] bg-[#b42318]/10 text-ink"
             }`}
           >
-            <Icon name={state.status === "not_configured" ? "info" : "alert"} className="mt-0.5 size-5 shrink-0" />
-            <span>{state.message}</span>
+            <Icon name={infoBanner ? "info" : "alert"} className="mt-0.5 size-5 shrink-0" />
+            <span>{banner.message}</span>
           </p>
         )}
         {(clientErrors || state.status === "invalid") && Object.values(errors).some(Boolean) && (
@@ -250,11 +288,11 @@ function ContactFormInner({ configured, onReset }: { configured: boolean; onRese
 
       <button
         type="submit"
-        disabled={pending || !configured}
+        disabled={pending || !enabled || (demo && !hydrated)}
         className={buttonClasses("primary", "w-full hover:!bg-ink hover:!text-paper disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:!bg-flame disabled:hover:!text-ink sm:w-auto")}
       >
-        {!configured ? "Enquiries opening soon" : pending ? "Sending…" : "Let's Talk"}
-        {configured && !pending && <Icon name="arrow" className="size-4 transition-transform group-hover:translate-x-1" />}
+        {!enabled ? "Enquiries opening soon" : pending ? "Sending…" : "Let's Talk"}
+        {enabled && !pending && <Icon name="arrow" className="size-4 transition-transform group-hover:translate-x-1" />}
       </button>
       </fieldset>
     </form>
@@ -300,7 +338,7 @@ function ErrorText({ id, message }: { id: string; message?: string }) {
   );
 }
 
-export function ContactForm({ configured }: { configured: boolean }) {
+export function ContactForm({ configured, demo }: { configured: boolean; demo: boolean }) {
   const [formKey, setFormKey] = useState(0);
-  return <ContactFormInner key={formKey} configured={configured} onReset={() => setFormKey((k) => k + 1)} />;
+  return <ContactFormInner key={formKey} configured={configured} demo={demo} onReset={() => setFormKey((k) => k + 1)} />;
 }

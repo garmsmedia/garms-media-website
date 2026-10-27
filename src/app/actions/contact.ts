@@ -4,9 +4,10 @@ import { headers } from "next/headers";
 import { isLeadStorageConfigured, saveLead } from "@/lib/contact/leads";
 import { isRateLimited } from "@/lib/contact/rate-limit";
 import { readContactForm, validateContact, type FieldErrors } from "@/lib/contact/validation";
+import { site } from "@/content/site";
 
 export type ContactState = {
-  status: "idle" | "success" | "invalid" | "not_configured" | "rate_limited" | "error";
+  status: "idle" | "demo" | "success" | "invalid" | "not_configured" | "rate_limited" | "error";
   message?: string;
   fieldErrors?: FieldErrors;
 };
@@ -15,6 +16,11 @@ export type ContactState = {
 const MIN_FILL_TIME_MS = 3000;
 
 export async function submitContact(_prev: ContactState, formData: FormData): Promise<ContactState> {
+  // 0. Demonstration mode: discard the submission without reading or storing it.
+  if (!site.enquiriesOpen) {
+    return { status: "demo", message: site.demoSubmitMessage };
+  }
+
   // 1. Rate limit by IP.
   const h = await headers();
   const ip = h.get("x-forwarded-for")?.split(",")[0]?.trim() || h.get("x-real-ip") || "unknown";
